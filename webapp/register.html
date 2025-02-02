@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+form
+{
+border:4px solid gold;
+border-radius:25px;
+height:auto;
+width:fit-content;
+padding: 20px 30px 25px 10px;
+margin-top:70px;
+font-size:20px;
+font-style:italic;
+box-shadow:10px 10px 10px 5px orange;
+}
+.box{
+border-radius:25px;
+padding:10px 20px;
+}
+body{
+background-color:black;
+color:white;
+}
+a:visited
+{
+color:lightgreen;
+}
+a:unvisited{
+color:red;
+}
+a:hover
+{
+color:skyblue;
+}
+</style>
+</head>
+<body>
+<center>
+<h1><u>Daily Expense Logger</u></h1>
+<form name="register" onsubmit="return validateForm()">
+<center><u><b>Login/SignIn</b></u></center><br>
+<center><u>Username:</u></center><br>
+<input type="text" name="username" placeholder="Enter your UserName" class="box"><br><br>
+
+<center><u>E-mail:</u></center><br>
+<input type="email" name="email" placeholder="Enter your Email" class="box"><br><br>
+
+<center><u>Password:</u></center><br>
+<input type="password" name="password" placeholder="Enter your password" class="box"><br><br>
+
+<center><u>Confirm Password:</u></center><br>
+<input type="password" name="cpassword" placeholder="Confirm your password" class="box"><br><br>
+
+<input type="submit" value="Register" class="box" onclick="validateForm()">
+Already having an account?<a href="login.html">SignIn</a>
+
+</form></center>
+<script type="text/javascript">
+    function validateForm() {
+        let username = document.register.username.value;
+        let email = document.register.email.value;
+        let password = document.register.password.value;
+        let confirmPassword = document.register.cpassword.value;
+
+        if (username === "" && email === "" && password === "" && confirmPassword === "") {
+            alert("All fields are required.");
+            return false;
+        }
+
+        let emailPattern = /^\S+\@\S+\.\S+$/;
+        if (!emailPattern.test(email)) {
+            alert("Please enter a valid email address.");
+            return false;
+        }
+
+        if (password !== confirmPassword) {
+            alert("Passwords do not match.");
+            return false;
+        }
+        alert("Registration successful! Redirecting to login page.");
+        window.location.href = "login.html";
+        return false; 
+    }
+</script>
+</body>
+</html>

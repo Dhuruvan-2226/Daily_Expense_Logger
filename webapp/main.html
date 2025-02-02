@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+.topnav a {
+  float: right;
+  color: black;
+  padding: 14px 16px;
+  font-size: 17px;
+  text-decoration:underLine;
+}
+.topnav{
+overflow:hidden;
+}
+.topnav a:hover {
+  background-color: white;
+  color: black;
+}
+body{
+background-color:gold;
+color:black;
+font-style:italic;
+}
+form
+{
+border:4px solid black;
+border-radius:25px;
+height:auto;
+width:fit-content;
+padding: 20px 30px 25px 10px;
+margin-top:70px;
+font-size:20px;
+font-style:italic;
+box-shadow:10px 10px 10px 5px white;
+}
+.box{
+border-radius:25px;
+padding:10px 20px;
+}
+h1
+{
+text-align:center;
+}
+h2
+{
+text-align:center;
+margin-top:50px;
+}
+h1,h2
+{
+text-decoration:underline;
+}
+.topnav a.active
+{
+background-color:yellow;
+}
+</style>
+</head>
+<body>
+<div class="topnav">
+  <a href="#about.html">About Us</a>
+  <a href="contact.html">Contact Us</a>
+  <a href="saved.jsp">Saved</a>
+  <a class="active" href="main.html">Home</a>
+</div>
+<h1>Daily Expense Logger</h1>
+<h2>Easily Track and Manage Your Expenses</h2>
+<center>
+<form action="saved.jsp" method="post">
+<table>
+  <tr>
+    <td>Category:</td>
+    <td><input type="text" name="category" placeholder="Enter the category" class="box"></td>
+  </tr>
+  <tr>
+    <td>Name:</td>
+    <td><input type="text" name="pname" placeholder="Enter the Product Name" class="box"></td>
+  </tr>
+  <tr>
+    <td>Date:</td>
+    <td><input type="datetime-local" name="pdate" class="box"></td>
+  </tr>
+  <tr>
+    <td>Amount:</td>
+    <td><input type="text" name="amount" placeholder="Enter the amount" class="box"></td>
+  </tr>
+  <tr>
+    <td>Details:</td>
+   <td><textarea rows="4" cols="30" class="box" name="details" placeholder="Enter additional details"></textarea></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+      <input type="submit" value="Submit" class="box">
+      <input type="reset" value="Clear" class="box">
+    </td>
+  </tr>
+</table>
+</form>
+</center>
+</body>
+</html>

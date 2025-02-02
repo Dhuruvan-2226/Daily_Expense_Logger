@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Contact Us</title>
+<style>
+body {
+  background-color: gold;
+  color: black;
+  font-style: italic;
+}
+h1 {
+  text-align: center;
+  text-decoration: underline;
+}
+form {
+border:4px solid black;
+border-radius:25px;
+height:auto;
+width:fit-content;
+padding: 20px 30px 25px 10px;
+margin-top:70px;
+font-size:20px;
+font-style:italic;
+box-shadow:10px 10px 10px 5px white;
+}
+.topnav a {
+  float: right;
+  color: black;
+  padding: 14px 16px;
+  font-size: 17px;
+  text-decoration:underLine;
+}
+.topnav{
+overflow:hidden;
+}
+.topnav a:hover {
+  background-color: white;
+  color: black;
+}
+.topnav a.active
+{
+background-color:yellow;
+}
+.box{
+border-radius:25px;
+padding:10px 20px;
+}
+</style>
+</head>
+<body>
+<div class="topnav">
+  <a href="about.html">About Us</a>
+  <a class="active" href="contact.html">Contact Us</a>
+  <a href="saved.jsp">Saved</a>
+  <a href="main.html">Home</a>
+</div>
+<h1>Contact Us</h1>
+<center>
+<form action="database.jsp" method="post">
+	Name:
+  <input type="text" name="name" placeholder="Your Name" class="box" required><br>
+  E-mail:
+  <input type="email" name="email" placeholder="Your Email" class="box" required><br>
+  Suggestion:
+  <textarea name="message" rows="5" cols="20" placeholder="Your Message" class="box" required></textarea><br>
+  <input type="submit" value="Send Message" class="box">
+</form>
+</center>
+</body>
+</html>

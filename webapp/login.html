@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+form
+{
+border:4px solid gold;
+border-radius:25px;
+height:auto;
+width:fit-content;
+padding: 20px 30px 25px 10px;
+margin-top:70px;
+font-size:20px;
+font-style:italic;
+box-shadow:10px 10px 10px 5px gold;
+}
+.box{
+border-radius:25px;
+padding:10px 20px;
+}
+body{
+background-color:black;
+color:white;
+}
+a:visited
+{
+color:Lightgreen;
+}
+a:unvisited{
+color:red;
+}
+a:hover
+{
+color:skyblue;
+}
+h1{
+text-shadow:20px 15px 3px white;
+}
+</style>
+</head>
+<body>
+<center>
+<h1><u>Daily Expense Logger</u></h1>
+<form onsubmit="return login()" name="validate">
+<center><u><b>Login/SignIn</b></u></center><br>
+<center><u>Username:</u></center><br>
+<input type="text" name="username" placeholder="Enter your UserName" class="box"><br><br>
+
+<center><u>Password:</u></center><br>
+<input type="password" name="password" placeholder="Enter your password" class="box"><br><br>
+
+<input type="submit" value="Submit" class="box" onclick="login()">
+New User?<a href="register.html">SignUp</a>
+
+</form></center>
+<script type="text/javascript">
+function login()
+{
+	let username=document.validate.username.value;
+	let pass=document.validate.password.value;
+	if(username!=""&&pass!="")
+		{
+		 let usernamePattern=/^[A-Za-z]+$/;
+		 let passwordPattern = /^(?=.*[a-zA-Z])(?=.*[!@#$%^&*])(?=.*\d)[A-Za-z!@#$%^&*0-9]{5,10}$/;
+		 if (!usernamePattern.test(username)) {
+             alert("Username must contain at least one letter.");
+             return false;
+         }
+         
+         if (!passwordPattern.test(pass)) {
+             alert("Password must contain at least one letter, one special character, one digit, and be 5-10 characters long.");
+             return false;
+         }
+         alert("Login successful");
+         window.location.href = "main.html";
+         return false; 
+     } else {
+         alert("Username and Password fields cannot be empty.");
+         return false;
+     }
+ }
+</script>
+</body>
+</html>
